@@ -118,8 +118,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oLn-Yu-cs4">
+                                <rect key="frame" x="27.5" y="137" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="566337034.86080003">
+                                    <!--2018-12-12 19:50:34 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAw-yP-1rm">
+                                <rect key="frame" x="16" y="152" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.56987337581302677" green="1" blue="0.88361553310091923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pAw-yP-1rm" firstAttribute="centerX" secondItem="bUP-0i-XuF" secondAttribute="centerX" constant="-152.5" id="IDa-XQ-PQe"/>
+                            <constraint firstItem="oLn-Yu-cs4" firstAttribute="centerX" secondItem="bUP-0i-XuF" secondAttribute="centerX" id="T0q-0M-1yX"/>
+                            <constraint firstItem="oLn-Yu-cs4" firstAttribute="centerY" secondItem="bUP-0i-XuF" secondAttribute="centerY" constant="-88.5" id="rwi-A8-dUa"/>
+                            <constraint firstItem="pAw-yP-1rm" firstAttribute="centerY" secondItem="bUP-0i-XuF" secondAttribute="centerY" constant="-171" id="xek-zE-ZF7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GRc-fs-jCY"/>
                     </view>
                 </viewController>
