@@ -28,6 +28,19 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SeG-Lz-9O7" id="6QI-6J-ni9">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7:30 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I3-SK-QcM">
+                                                    <rect key="frame" x="26" y="14" width="63" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayE-Gp-bXc">
+                                                    <rect key="frame" x="285" y="6" width="49" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </switch>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -39,8 +52,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeX-rQ-pmV">
-                                <rect key="frame" x="299" y="54" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeX-rQ-pmV">
+                                <rect key="frame" x="319.5" y="67.5" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.048410050872695676" green="0.57971744086095345" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
@@ -48,7 +62,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EeX-rQ-pmV" secondAttribute="height" multiplier="1:1" id="aoT-Jx-DIv"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="5c11c31917f76bd02cc9103197a68ba9"/>
                                 <connections>
                                     <segue destination="FHR-Jh-hCT" kind="show" id="5YK-WF-ier"/>
                                 </connections>
@@ -59,6 +72,8 @@
                             <constraint firstItem="aN7-SV-PNn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Ao-pu-BwH"/>
                             <constraint firstItem="uT0-me-7Sc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4oI-ob-M7b"/>
                             <constraint firstItem="uT0-me-7Sc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4of-Ab-0qI"/>
+                            <constraint firstItem="EeX-rQ-pmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="147" id="HH6-90-95U"/>
+                            <constraint firstItem="EeX-rQ-pmV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-251" id="jIy-2q-p3r"/>
                             <constraint firstItem="aN7-SV-PNn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-293" id="nIx-g4-Z7m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -103,7 +118,4 @@
             <point key="canvasLocation" x="993" y="134"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="5c11c31917f76bd02cc9103197a68ba9" width="409.60000610351562" height="409.60000610351562"/>
-    </resources>
 </document>
