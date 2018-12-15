@@ -14,6 +14,7 @@
 		2B4E858621B9E1AB00FC437D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4E858421B9E1AB00FC437D /* LaunchScreen.storyboard */; };
 		2B4E859121B9E1AB00FC437D /* Rest_EasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E859021B9E1AB00FC437D /* Rest_EasyTests.swift */; };
 		2B4E859C21B9E1AB00FC437D /* Rest_EasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E859B21B9E1AB00FC437D /* Rest_EasyUITests.swift */; };
+		2BF804F521C5BE8F00995D06 /* AlarmDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2B4E859721B9E1AB00FC437D /* Rest EasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rest EasyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4E859B21B9E1AB00FC437D /* Rest_EasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest_EasyUITests.swift; sourceTree = "<group>"; };
 		2B4E859D21B9E1AB00FC437D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				2B4E858221B9E1AB00FC437D /* Assets.xcassets */,
 				2B4E858421B9E1AB00FC437D /* LaunchScreen.storyboard */,
 				2B4E858721B9E1AB00FC437D /* Info.plist */,
+				2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */,
 			);
 			path = "Rest Easy";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4E857E21B9E1A500FC437D /* ViewController.swift in Sources */,
+				2BF804F521C5BE8F00995D06 /* AlarmDetailController.swift in Sources */,
 				2B4E857C21B9E1A500FC437D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
