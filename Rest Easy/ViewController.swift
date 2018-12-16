@@ -8,7 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var alarmTableView: UITableView!
+    
+    let alarmList = [] as NSArray
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return alarmList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // TODO: Make cells read from Model data.
+        let cell = UITableViewCell()
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
