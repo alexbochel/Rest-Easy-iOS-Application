@@ -99,13 +99,14 @@
 		2B4E857A21B9E1A500FC437D /* Rest Easy */ = {
 			isa = PBXGroup;
 			children = (
-				2B4E857B21B9E1A500FC437D /* AppDelegate.swift */,
 				2B4E857D21B9E1A500FC437D /* ViewController.swift */,
+				2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */,
+				2BF804F621C5D23600995D06 /* Models */,
+				2B4E857B21B9E1A500FC437D /* AppDelegate.swift */,
 				2B4E857F21B9E1A500FC437D /* Main.storyboard */,
 				2B4E858221B9E1AB00FC437D /* Assets.xcassets */,
 				2B4E858421B9E1AB00FC437D /* LaunchScreen.storyboard */,
 				2B4E858721B9E1AB00FC437D /* Info.plist */,
-				2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */,
 			);
 			path = "Rest Easy";
 			sourceTree = "<group>";
@@ -126,6 +127,13 @@
 				2B4E859D21B9E1AB00FC437D /* Info.plist */,
 			);
 			path = "Rest EasyUITests";
+			sourceTree = "<group>";
+		};
+		2BF804F621C5D23600995D06 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

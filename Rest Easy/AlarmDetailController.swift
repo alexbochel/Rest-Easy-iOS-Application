@@ -22,8 +22,10 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
         return alarmStyleList.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return alarmStyleList[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        let returnedRow = alarmStyleList[row]
+        return NSAttributedString(string: returnedRow, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
     override func viewDidLoad() {
