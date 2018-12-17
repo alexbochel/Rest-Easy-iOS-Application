@@ -14,6 +14,7 @@
 		2B4E858621B9E1AB00FC437D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4E858421B9E1AB00FC437D /* LaunchScreen.storyboard */; };
 		2B4E859121B9E1AB00FC437D /* Rest_EasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E859021B9E1AB00FC437D /* Rest_EasyTests.swift */; };
 		2B4E859C21B9E1AB00FC437D /* Rest_EasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E859B21B9E1AB00FC437D /* Rest_EasyUITests.swift */; };
+		2BEF16FA21C7FEF9004C4896 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF16F921C7FEF9004C4896 /* AlarmModel.swift */; };
 		2BF804F521C5BE8F00995D06 /* AlarmDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		2B4E859721B9E1AB00FC437D /* Rest EasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rest EasyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4E859B21B9E1AB00FC437D /* Rest_EasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest_EasyUITests.swift; sourceTree = "<group>"; };
 		2B4E859D21B9E1AB00FC437D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BEF16F921C7FEF9004C4896 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,8 +101,7 @@
 		2B4E857A21B9E1A500FC437D /* Rest Easy */ = {
 			isa = PBXGroup;
 			children = (
-				2B4E857D21B9E1A500FC437D /* ViewController.swift */,
-				2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */,
+				2BEF16F821C7FE9E004C4896 /* Controllers */,
 				2BF804F621C5D23600995D06 /* Models */,
 				2B4E857B21B9E1A500FC437D /* AppDelegate.swift */,
 				2B4E857F21B9E1A500FC437D /* Main.storyboard */,
@@ -129,9 +130,19 @@
 			path = "Rest EasyUITests";
 			sourceTree = "<group>";
 		};
+		2BEF16F821C7FE9E004C4896 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */,
+				2B4E857D21B9E1A500FC437D /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2BF804F621C5D23600995D06 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2BEF16F921C7FEF9004C4896 /* AlarmModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4E857E21B9E1A500FC437D /* ViewController.swift in Sources */,
+				2BEF16FA21C7FEF9004C4896 /* AlarmModel.swift in Sources */,
 				2BF804F521C5BE8F00995D06 /* AlarmDetailController.swift in Sources */,
 				2B4E857C21B9E1A500FC437D /* AppDelegate.swift in Sources */,
 			);
