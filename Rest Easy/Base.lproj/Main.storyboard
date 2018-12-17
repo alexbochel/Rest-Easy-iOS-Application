@@ -60,6 +60,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="cm7-mt-hWy"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xjf-Tl-JSH"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aN7-SV-PNn">
                                 <rect key="frame" x="165" y="55.666666666666664" width="84" height="27.666666666666664"/>
@@ -124,7 +128,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Sjy-ft-6ey"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="BackSegue" id="Sjy-ft-6ey"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnI-qY-Qkt">
@@ -133,7 +137,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="c9z-mb-yCt"/>
+                                    <action selector="onButtonClick:" destination="FHR-Jh-hCT" eventType="touchUpInside" id="IUu-9E-LmL"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="DoneSegue" id="c9z-mb-yCt"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oLn-Yu-cs4">
@@ -195,6 +200,7 @@
                     </view>
                     <connections>
                         <outlet property="alarmStylePicker" destination="G3H-qS-khd" id="ZA8-yC-Tl5"/>
+                        <outlet property="alarmTimePicker" destination="oLn-Yu-cs4" id="ufF-6X-8BE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDM-wJ-UjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -203,6 +209,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Sjy-ft-6ey"/>
+        <segue reference="c9z-mb-yCt"/>
     </inferredMetricsTieBreakers>
 </document>

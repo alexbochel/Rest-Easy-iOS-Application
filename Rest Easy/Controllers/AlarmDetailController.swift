@@ -11,8 +11,23 @@ import UIKit
 class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
    
     @IBOutlet weak var alarmStylePicker: UIPickerView!
+    @IBOutlet weak var alarmTimePicker: UIDatePicker!
     
     let alarmStyleList = ["Siren", "Constant", "Pulse", "Beep", "Wave"]
+    var newAlarm: AlarmModel?
+    
+    @IBAction func onButtonClick(_ sender: Any) {
+        let alarmTime = alarmTimePicker.date
+        
+        let newAlarmModel: AlarmModel = AlarmModel(timeForAlarmToSound: alarmTime, alarmStyle: "TODO", alarmStrength: "TODO")
+        
+        newAlarm = newAlarmModel
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let mainViewController = segue.destination as! ViewController
+        mainViewController.alarmList.insert(newAlarm!, at: 0)
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

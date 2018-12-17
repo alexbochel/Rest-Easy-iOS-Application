@@ -12,15 +12,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var alarmTableView: UITableView!
     
-    let alarmList = [] as NSArray
+    var alarmList = [AlarmModel]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return alarmList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: Make cells read from Model data.
-        let cell = UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmTableCell", for: indexPath) as! AlarmTableViewCell
+        
+        for alarm in alarmList
+        {
+            let dateformatter = DateFormatter()
+            
+            dateformatter.timeStyle = DateFormatter.Style.short
+            
+            let time = dateformatter.string(from: alarm.TimeForAlarmToSound as Date)
+            
+            cell.AlarmTimeLabel.text = time
+        }
         return cell
     }
     
@@ -29,4 +40,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib.
     }
 }
-
