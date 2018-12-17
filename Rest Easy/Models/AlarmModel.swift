@@ -8,9 +8,17 @@
 
 import Foundation
 
-class AlarmModel {
-    // Alarm time of day
-    // Alarm style type
-    // Alarm strength
-    // Alarm Weekdays
+class AlarmModel: NSObject {
+    
+    var TimeForAlarmToSound: Date!
+    var AlarmStyle: String!
+    var AlarmStrength: String!
+    var DaysForAlarmToSound: Array<String>!
+    
+    init(timeForAlarmToSound: Date, alarmStyle: String, alarmStrength: String)
+    {
+        TimeForAlarmToSound = timeForAlarmToSound
+        AlarmStyle = alarmStyle
+        AlarmStrength = alarmStrength
+    }
 }
