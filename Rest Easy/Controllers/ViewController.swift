@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var alarmTableView: UITableView!
     
     var alarmList = [AlarmModel]()
+    let locale = Locale.current
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return alarmList.count
@@ -22,21 +23,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmTableCell", for: indexPath) as! AlarmTableViewCell
         
-        for alarm in alarmList
-        {
-            let dateformatter = DateFormatter()
-            
-            dateformatter.timeStyle = DateFormatter.Style.short
-            
-            let time = dateformatter.string(from: alarm.TimeForAlarmToSound as Date)
-            
-            cell.AlarmTimeLabel.text = time
-        }
+        let dateformatter = DateFormatter()
+        
+        let alarm = alarmList[indexPath.row]
+        
+        dateformatter.timeStyle = DateFormatter.Style.short
+        
+        let time = dateformatter.string(from: alarm.TimeForAlarmToSound as Date)
+        
+        cell.AlarmTimeLabel.text = time
+        
+        saveAlarms()
+        
         return cell
+    }
+    
+    //func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      //  if editingStyle == .delete
+      //  {
+            
+      //  }
+    //}
+    
+    func loadAlarms() -> [AlarmModel]?
+    {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: AlarmModel.ArchiveURL.path) as? [AlarmModel]
+    }
+    
+    func saveAlarms()
+    {
+        NSKeyedArchiver.archiveRootObject(self.alarmList, toFile: AlarmModel.ArchiveURL.path)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        if let savedAlarms = loadAlarms() {
+            alarmList += savedAlarms
+        }
+        
+        self.alarmTableView.reloadData()
     }
 }
