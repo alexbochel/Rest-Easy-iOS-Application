@@ -38,12 +38,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    //func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-      //  if editingStyle == .delete
-      //  {
-            
-      //  }
-    //}
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            alarmList.remove(at: indexPath.row)
+            saveAlarms()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     
     func loadAlarms() -> [AlarmModel]?
     {
