@@ -15,6 +15,7 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet weak var alarmTimePicker: UIDatePicker!
     
     let alarmStyleList = ["Siren", "Constant", "Pulse", "Beep", "Wave"]
+    let vibrateIntensityList = ["Soft", "Normal", "Hard"]
     var newAlarm: AlarmModel?
     
     @IBAction func onButtonClick(_ sender: Any) {
@@ -38,17 +39,31 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return alarmStyleList.count
+        if (pickerView.tag == 0)
+        {
+            return alarmStyleList.count
+        }
+        else
+        {
+            return vibrateIntensityList.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
-        let returnedRow = alarmStyleList[row]
-        return NSAttributedString(string: returnedRow, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        if (pickerView.tag == 0)
+        {
+            let returnedRow = alarmStyleList[row]
+            return NSAttributedString(string: returnedRow, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        }
+        else
+        {
+            let returnedRow = vibrateIntensityList[row]
+            return NSAttributedString(string: returnedRow, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        alarmTimePicker.setValue(UIColor.white, forKey: "textColor")
     }
 }
