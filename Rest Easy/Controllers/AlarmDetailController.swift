@@ -17,11 +17,13 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
     let alarmStyleList = ["Siren", "Constant", "Pulse", "Beep", "Wave"]
     let vibrateIntensityList = ["Soft", "Normal", "Hard"]
     var newAlarm: AlarmModel?
+    var chosenStyle: String = "Siren"
+    var chosenIntensity: String = "Soft"
     
     @IBAction func onButtonClick(_ sender: Any) {
         let alarmTime = alarmTimePicker.date
         
-        let newAlarmModel: AlarmModel = AlarmModel(timeForAlarmToSound: alarmTime, alarmStyle: "TODO", alarmStrength: "TODO")
+        let newAlarmModel: AlarmModel = AlarmModel(timeForAlarmToSound: alarmTime, alarmStyle: chosenStyle, alarmStrength: chosenIntensity)
         
         newAlarm = newAlarmModel
     }
@@ -59,6 +61,17 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
         {
             let returnedRow = vibrateIntensityList[row]
             return NSAttributedString(string: returnedRow, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerView.tag == 0)
+        {
+            chosenStyle = alarmStyleList[row]
+        }
+        else
+        {
+            chosenIntensity = vibrateIntensityList[row]
         }
     }
     

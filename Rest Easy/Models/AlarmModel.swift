@@ -43,10 +43,10 @@ class AlarmModel: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         let TimeForAlarmToSound = aDecoder.decodeObject(forKey: "timeForAlarmToSound") as! Date
-        let AlarmStyle = aDecoder.decodeObject(forKey: "alarmStyle") as? String
-        let AlarmStrength = aDecoder.decodeObject(forKey: "alarmStrength") as? String
+        let AlarmStyle = aDecoder.decodeObject(forKey: "alarmStyleKey") as! String
+        let AlarmStrength = aDecoder.decodeObject(forKey: "alarmStrengthKey") as! String
 
         
-        self.init(timeForAlarmToSound: TimeForAlarmToSound, alarmStyle: AlarmStyle ?? "TODO", alarmStrength: AlarmStrength ?? "TODO")
+        self.init(timeForAlarmToSound: TimeForAlarmToSound, alarmStyle: AlarmStyle, alarmStrength: AlarmStrength)
     }
 }
