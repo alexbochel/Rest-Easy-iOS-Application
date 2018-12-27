@@ -10,6 +10,7 @@ import UIKit
 
 class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
    
+    @IBOutlet weak var vibrateIntensityPicker: UIPickerView!
     @IBOutlet weak var alarmStylePicker: UIPickerView!
     @IBOutlet weak var alarmTimePicker: UIDatePicker!
     
@@ -25,8 +26,11 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let mainViewController = segue.destination as! ViewController
-        mainViewController.alarmList.insert(newAlarm!, at: 0)
+        if newAlarm != nil
+        {
+            let mainViewController = segue.destination as! ViewController
+            mainViewController.alarmList.insert(newAlarm!, at: 0)
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

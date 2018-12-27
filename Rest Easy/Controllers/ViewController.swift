@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var alarmTableView: UITableView!
     
     var alarmList = [AlarmModel]()
-    let locale = Locale.current
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return alarmList.count

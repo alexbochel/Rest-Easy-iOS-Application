@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uT0-me-7Sc" userLabel="AlarmTableView">
-                                <rect key="frame" x="16" y="103.33333333333331" width="382" height="742.66666666666674"/>
+                                <rect key="frame" x="16" y="103.66666666666669" width="382" height="742.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlarmTableCell" rowHeight="131" id="rgG-f7-HQ6" customClass="AlarmTableViewCell" customModule="Rest_Easy" customModuleProvider="target">
@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kD-o2-1yL">
-                                                    <rect key="frame" x="305.33333333333331" y="50" width="51" height="31"/>
+                                                    <rect key="frame" x="325" y="50" width="51" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="9kD-o2-1yL" secondAttribute="height" multiplier="49:31" id="5nO-ZC-zZ5"/>
                                                     </constraints>
@@ -46,11 +46,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="9kD-o2-1yL" secondAttribute="trailing" constant="8" id="30V-ng-6vm"/>
                                                 <constraint firstItem="2L8-Sg-Q4x" firstAttribute="leading" secondItem="au9-RQ-YuZ" secondAttribute="leadingMargin" constant="7" id="66f-uD-peA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="2L8-Sg-Q4x" secondAttribute="bottom" constant="39" id="D7Q-Md-qes"/>
                                                 <constraint firstItem="9kD-o2-1yL" firstAttribute="top" secondItem="au9-RQ-YuZ" secondAttribute="topMargin" constant="39" id="Kgm-7C-wSt"/>
                                                 <constraint firstItem="2L8-Sg-Q4x" firstAttribute="top" secondItem="au9-RQ-YuZ" secondAttribute="topMargin" constant="29" id="LWk-om-GOV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="9kD-o2-1yL" secondAttribute="trailing" constant="7.7999999999999998" id="T0K-3F-aTn"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="9kD-o2-1yL" secondAttribute="bottom" constant="39" id="w4X-mr-R7U"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -66,7 +66,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aN7-SV-PNn">
-                                <rect key="frame" x="165" y="55.666666666666664" width="84" height="27.666666666666664"/>
+                                <rect key="frame" x="164.33333333333334" y="55.666666666666657" width="85.333333333333343" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aN7-SV-PNn" secondAttribute="height" multiplier="64:21" id="PCj-nA-GNo"/>
                                 </constraints>
@@ -133,6 +133,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnI-qY-Qkt">
                                 <rect key="frame" x="361" y="89" width="37" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="DoneButton"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -141,7 +142,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="DoneSegue" id="c9z-mb-yCt"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oLn-Yu-cs4">
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oLn-Yu-cs4">
                                 <rect key="frame" x="16" y="154" width="382" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="566337034.86080003">
                                     <!--2018-12-12 19:50:34 +0000-->
@@ -153,14 +154,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3H-qS-khd">
-                                <rect key="frame" x="79" y="445" width="186" height="216"/>
-                                <accessibility key="accessibilityConfiguration" label="d"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="FHR-Jh-hCT" id="YzK-ln-maD"/>
-                                    <outlet property="delegate" destination="FHR-Jh-hCT" id="rfS-ac-qUr"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXm-au-YKb">
                                 <rect key="frame" x="16" y="447" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -168,7 +161,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDJ-Yv-f3T">
-                                <rect key="frame" x="165" y="55.666666666666664" width="84" height="27.666666666666664"/>
+                                <rect key="frame" x="164.33333333333334" y="55.666666666666657" width="85.333333333333343" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XDJ-Yv-f3T" secondAttribute="height" multiplier="64:21" id="aHh-xP-ivt"/>
                                 </constraints>
@@ -176,22 +169,41 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3H-qS-khd">
+                                <rect key="frame" x="-45" y="447" width="320" height="216"/>
+                                <accessibility key="accessibilityConfiguration" label="d"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FHR-Jh-hCT" id="YzK-ln-maD"/>
+                                    <outlet property="delegate" destination="FHR-Jh-hCT" id="rfS-ac-qUr"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView tag="1" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xb4-dE-fgg" userLabel="Vibrate Intensity Picker">
+                                <rect key="frame" x="130" y="447" width="320" height="216"/>
+                                <accessibility key="accessibilityConfiguration" label="d"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FHR-Jh-hCT" id="0qJ-cI-7NS"/>
+                                    <outlet property="delegate" destination="FHR-Jh-hCT" id="u5Q-T3-Bw9"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.1868198458751307" green="0.69796200466132396" blue="0.91984230279922485" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pAw-yP-1rm" firstAttribute="leading" secondItem="GRc-fs-jCY" secondAttribute="leading" constant="16" id="4z1-iR-aTQ"/>
-                            <constraint firstItem="G3H-qS-khd" firstAttribute="leading" secondItem="cXm-au-YKb" secondAttribute="trailing" constant="15" id="8AB-zW-NvH"/>
                             <constraint firstItem="XDJ-Yv-f3T" firstAttribute="top" secondItem="GRc-fs-jCY" secondAttribute="top" constant="11.5" id="9DA-o4-kjH"/>
                             <constraint firstItem="UnI-qY-Qkt" firstAttribute="top" secondItem="GRc-fs-jCY" secondAttribute="top" constant="45" id="FSu-XU-cpD"/>
                             <constraint firstItem="XDJ-Yv-f3T" firstAttribute="centerX" secondItem="bUP-0i-XuF" secondAttribute="centerX" id="IoG-0S-sHO"/>
+                            <constraint firstItem="Xb4-dE-fgg" firstAttribute="top" secondItem="oLn-Yu-cs4" secondAttribute="bottom" constant="75" id="JXy-FB-K3m"/>
                             <constraint firstItem="GRc-fs-jCY" firstAttribute="trailing" secondItem="oLn-Yu-cs4" secondAttribute="trailing" constant="16" id="Kku-GY-KHs"/>
                             <constraint firstItem="G3H-qS-khd" firstAttribute="top" secondItem="oLn-Yu-cs4" secondAttribute="bottom" constant="75" id="LAW-OD-Whi"/>
                             <constraint firstItem="cXm-au-YKb" firstAttribute="leading" secondItem="GRc-fs-jCY" secondAttribute="leading" constant="16" id="O5L-nc-2U2"/>
+                            <constraint firstItem="oLn-Yu-cs4" firstAttribute="top" secondItem="UnI-qY-Qkt" secondAttribute="bottom" constant="35" id="Pir-V9-vh0"/>
                             <constraint firstItem="kaX-5a-1hd" firstAttribute="top" secondItem="GRc-fs-jCY" secondAttribute="top" constant="45" id="QXi-wS-VZo"/>
                             <constraint firstItem="GRc-fs-jCY" firstAttribute="trailing" secondItem="UnI-qY-Qkt" secondAttribute="trailing" constant="16" id="Qq8-iQ-fBf"/>
+                            <constraint firstItem="GRc-fs-jCY" firstAttribute="bottom" secondItem="G3H-qS-khd" secondAttribute="bottom" constant="75" id="RX9-9C-OjC"/>
+                            <constraint firstItem="G3H-qS-khd" firstAttribute="centerX" secondItem="bUP-0i-XuF" secondAttribute="centerX" constant="-92" id="UUX-Tl-akj"/>
                             <constraint firstItem="pAw-yP-1rm" firstAttribute="top" secondItem="kaX-5a-1hd" secondAttribute="bottom" constant="35" id="ZID-Dr-biz"/>
                             <constraint firstItem="cXm-au-YKb" firstAttribute="top" secondItem="oLn-Yu-cs4" secondAttribute="bottom" constant="77" id="cCC-O2-ZRU"/>
-                            <constraint firstItem="GRc-fs-jCY" firstAttribute="trailing" secondItem="G3H-qS-khd" secondAttribute="trailing" constant="150" id="cIo-4b-FrT"/>
+                            <constraint firstItem="Xb4-dE-fgg" firstAttribute="centerX" secondItem="bUP-0i-XuF" secondAttribute="centerX" constant="83" id="emA-3b-rLH"/>
                             <constraint firstItem="kaX-5a-1hd" firstAttribute="leading" secondItem="GRc-fs-jCY" secondAttribute="leading" constant="16" id="j7o-5h-z8j"/>
                             <constraint firstItem="oLn-Yu-cs4" firstAttribute="top" secondItem="kaX-5a-1hd" secondAttribute="bottom" constant="35" id="nZ3-kN-Uan"/>
                             <constraint firstItem="oLn-Yu-cs4" firstAttribute="leading" secondItem="GRc-fs-jCY" secondAttribute="leading" constant="16" id="uVc-Ho-k32"/>
@@ -201,6 +213,7 @@
                     <connections>
                         <outlet property="alarmStylePicker" destination="G3H-qS-khd" id="ZA8-yC-Tl5"/>
                         <outlet property="alarmTimePicker" destination="oLn-Yu-cs4" id="ufF-6X-8BE"/>
+                        <outlet property="vibrateIntensityPicker" destination="Xb4-dE-fgg" id="9nC-ja-FRr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDM-wJ-UjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
