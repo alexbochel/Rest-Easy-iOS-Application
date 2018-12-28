@@ -26,7 +26,7 @@ class AlarmModel: NSObject, NSCoding {
         static let alarmStyleKey = "alarmStyleKey"
         static let alarmStrengthKey = "alarmStrengthKey"
         static let daysForAlarmToSoundKey = "daysForAlarmToSoundKey"
-        static let armed = "armedKey"
+        static let armedKey = "armedKey"
     }
     
     init(timeForAlarmToSound: Date, alarmStyle: String, alarmStrength: String, armed: Bool)
@@ -42,14 +42,15 @@ class AlarmModel: NSObject, NSCoding {
         aCoder.encode(AlarmStyle, forKey:  PropertyKey.alarmStyleKey)
         aCoder.encode(AlarmStrength, forKey:  PropertyKey.alarmStrengthKey)
         aCoder.encode(DaysForAlarmToSound, forKey:  PropertyKey.daysForAlarmToSoundKey)
+        aCoder.encode(Armed, forKey: PropertyKey.armedKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
         let TimeForAlarmToSound = aDecoder.decodeObject(forKey: "timeForAlarmToSound") as! Date
         let AlarmStyle = aDecoder.decodeObject(forKey: "alarmStyleKey") as! String
         let AlarmStrength = aDecoder.decodeObject(forKey: "alarmStrengthKey") as! String
-        let Armed = aDecoder.decodeObject(forKey: "armedKey") as! Bool
+        let Armed = aDecoder.decodeObject(forKey: "armedKey") as? Bool
         
-        self.init(timeForAlarmToSound: TimeForAlarmToSound, alarmStyle: AlarmStyle, alarmStrength: AlarmStrength, armed: Armed)
+        self.init(timeForAlarmToSound: TimeForAlarmToSound, alarmStyle: AlarmStyle, alarmStrength: AlarmStrength, armed: Armed ?? false) // TODO: Delete default
     }
 }

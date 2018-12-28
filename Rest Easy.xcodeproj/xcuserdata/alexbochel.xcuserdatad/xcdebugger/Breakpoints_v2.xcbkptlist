@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rest Easy/Models/AlarmModel.swift"
-            timestampString = "567650412.59863"
+            timestampString = "567650755.2317261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "init(coder:)"
             landmarkType = "7">
          </BreakpointContent>
