@@ -23,7 +23,7 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBAction func onButtonClick(_ sender: Any) {
         let alarmTime = alarmTimePicker.date
         
-        let newAlarmModel: AlarmModel = AlarmModel(timeForAlarmToSound: alarmTime, alarmStyle: chosenStyle, alarmStrength: chosenIntensity)
+        let newAlarmModel: AlarmModel = AlarmModel(timeForAlarmToSound: alarmTime, alarmStyle: chosenStyle, alarmStrength: chosenIntensity, armed: true)
         
         newAlarm = newAlarmModel
     }

@@ -14,6 +14,7 @@ class AlarmModel: NSObject, NSCoding {
     var AlarmStyle: String!
     var AlarmStrength: String!
     var DaysForAlarmToSound: Array<String>!
+    var Armed: Bool!
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     
@@ -25,13 +26,15 @@ class AlarmModel: NSObject, NSCoding {
         static let alarmStyleKey = "alarmStyleKey"
         static let alarmStrengthKey = "alarmStrengthKey"
         static let daysForAlarmToSoundKey = "daysForAlarmToSoundKey"
+        static let armed = "armedKey"
     }
     
-    init(timeForAlarmToSound: Date, alarmStyle: String, alarmStrength: String)
+    init(timeForAlarmToSound: Date, alarmStyle: String, alarmStrength: String, armed: Bool)
     {
         TimeForAlarmToSound = timeForAlarmToSound
         AlarmStyle = alarmStyle
         AlarmStrength = alarmStrength
+        Armed = armed
     }
     
     func encode(with aCoder: NSCoder) {
@@ -45,8 +48,8 @@ class AlarmModel: NSObject, NSCoding {
         let TimeForAlarmToSound = aDecoder.decodeObject(forKey: "timeForAlarmToSound") as! Date
         let AlarmStyle = aDecoder.decodeObject(forKey: "alarmStyleKey") as! String
         let AlarmStrength = aDecoder.decodeObject(forKey: "alarmStrengthKey") as! String
-
+        let Armed = aDecoder.decodeObject(forKey: "armedKey") as! Bool
         
-        self.init(timeForAlarmToSound: TimeForAlarmToSound, alarmStyle: AlarmStyle, alarmStrength: AlarmStrength)
+        self.init(timeForAlarmToSound: TimeForAlarmToSound, alarmStyle: AlarmStyle, alarmStrength: AlarmStrength, armed: Armed)
     }
 }
