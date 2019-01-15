@@ -34,6 +34,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         saveAlarms()
         
+        cell.layer.cornerRadius = 8
+        cell.layer.borderColor = CGColor.typeID()
+        cell.layer.borderWidth = 3
+        
         return cell
     }
     
