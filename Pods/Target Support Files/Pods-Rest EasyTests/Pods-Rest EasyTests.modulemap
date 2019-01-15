@@ -1,0 +1,6 @@
+framework module Pods_Rest_EasyTests {
+  umbrella header "Pods-Rest EasyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

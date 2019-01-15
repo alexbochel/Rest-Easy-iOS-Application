@@ -21,11 +21,14 @@ class AlarmTableViewCell: UITableViewCell {
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var saturdayButton: UIButton!
     
+    var referencedAlarmModel: AlarmModel?
+    
     @IBAction func alarmDayClicked(_ sender: UIButton) {
         let selected = !sender.isSelected
         
         if selected
         {
+            // Edit the referenced model
             print("selected")
         }
         else

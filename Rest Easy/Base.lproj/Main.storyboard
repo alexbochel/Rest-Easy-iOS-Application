@@ -261,6 +261,11 @@
                             <pickerView tag="1" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xb4-dE-fgg" userLabel="Vibrate Intensity Picker">
                                 <rect key="frame" x="130" y="447" width="320" height="216"/>
                                 <accessibility key="accessibilityConfiguration" label="d"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="widthForComponent">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="FHR-Jh-hCT" id="0qJ-cI-7NS"/>
                                     <outlet property="delegate" destination="FHR-Jh-hCT" id="u5Q-T3-Bw9"/>

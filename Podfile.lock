@@ -1,0 +1,16 @@
+PODS:
+  - Haptico (1.0.2)
+
+DEPENDENCIES:
+  - Haptico
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Haptico
+
+SPEC CHECKSUMS:
+  Haptico: ce38d1f993f3a0df9a6d7795a9dd2849648aa9d1
+
+PODFILE CHECKSUM: 7d92081e0cee8060fc9a028c2d8d85e6d8a1e0e8
+
+COCOAPODS: 1.5.3

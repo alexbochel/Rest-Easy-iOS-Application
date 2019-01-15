@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AudioToolbox
+import Haptico
 
 class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
    
@@ -68,10 +70,35 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
         if (pickerView.tag == 0)
         {
             chosenStyle = alarmStyleList[row]
+            vibrateAccordingToPreferences()
         }
         else
         {
             chosenIntensity = vibrateIntensityList[row]
+        }
+    }
+    
+    func vibrateAccordingToPreferences()
+    {
+        if (chosenStyle == "Siren")
+        {
+            Haptico.shared().generateFeedbackFromPattern(".-O-.-O", delay: 0.2)
+        }
+        else if (chosenStyle == "Constant")
+        {
+            Haptico.shared().generateFeedbackFromPattern("oooo", delay: 0.0)
+        }
+        else if (chosenStyle == "Pulse")
+        {
+            Haptico.shared().generateFeedbackFromPattern("oooo", delay: 0.0)
+        }
+        else if (chosenStyle == "Beep")
+        {
+            Haptico.shared().generateFeedbackFromPattern("o-o-o-o", delay: 0.2)
+        }
+        else if (chosenStyle == "Wave")
+        {
+            Haptico.shared().generateFeedbackFromPattern(".oO.oO.oO", delay: 0.0)
         }
     }
     
