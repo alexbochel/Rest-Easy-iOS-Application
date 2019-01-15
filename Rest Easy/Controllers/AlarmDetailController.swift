@@ -39,11 +39,11 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (pickerView.tag == 0)
+        if (component == 0)
         {
             return alarmStyleList.count
         }
@@ -54,7 +54,7 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        if (pickerView.tag == 0)
+        if (component == 0)
         {
             let returnedRow = alarmStyleList[row]
             return NSAttributedString(string: returnedRow, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
@@ -67,7 +67,7 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if (pickerView.tag == 0)
+        if (component == 0)
         {
             chosenStyle = alarmStyleList[row]
             vibrateAccordingToPreferences()
