@@ -109,7 +109,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kD-o2-1yL">
-                                                    <rect key="frame" x="281.33333333333331" y="50" width="30.666666666666686" height="30"/>
+                                                    <rect key="frame" x="300" y="50" width="51" height="30"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -117,7 +117,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="2L8-Sg-Q4x" secondAttribute="bottom" constant="39" id="D7Q-Md-qes"/>
                                                 <constraint firstItem="9kD-o2-1yL" firstAttribute="top" secondItem="au9-RQ-YuZ" secondAttribute="topMargin" constant="39" id="Kgm-7C-wSt"/>
                                                 <constraint firstItem="2L8-Sg-Q4x" firstAttribute="top" secondItem="au9-RQ-YuZ" secondAttribute="topMargin" constant="29" id="LWk-om-GOV"/>
-                                                <constraint firstItem="9kD-o2-1yL" firstAttribute="leading" secondItem="2L8-Sg-Q4x" secondAttribute="trailing" constant="160" id="PZo-Cy-3oe"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="9kD-o2-1yL" secondAttribute="trailing" constant="25" id="Psd-Qb-Knv"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="9kD-o2-1yL" secondAttribute="bottom" constant="39" id="w4X-mr-R7U"/>
                                             </constraints>

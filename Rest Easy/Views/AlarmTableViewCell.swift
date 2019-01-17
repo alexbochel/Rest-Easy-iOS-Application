@@ -21,6 +21,8 @@ class AlarmTableViewCell: UITableViewCell {
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var saturdayButton: UIButton!
     
+    @IBOutlet weak var BackgroundCardView: UIView!
+    
     var referencedAlarmModel: AlarmModel?
     
     @IBAction func alarmDayClicked(_ sender: UIButton) {
@@ -39,10 +41,13 @@ class AlarmTableViewCell: UITableViewCell {
         sender.isSelected = selected
     }
     
+    func updateUI() {
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        updateUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

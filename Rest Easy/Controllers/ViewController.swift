@@ -11,11 +11,27 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var alarmTableView: UITableView!
+    var cellSpacingHeight: CGFloat = 10
     
     var alarmList = [AlarmModel]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return alarmList.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   viewForHeaderInSection section: Int) -> UIView? {
+        let customView = UIView()
+        customView.backgroundColor = UIColor.clear
+        return customView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,8 +51,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         saveAlarms()
         
         cell.layer.cornerRadius = 8
-        cell.layer.borderColor = UIColor.clear.cgColor
-        cell.layer.borderWidth = 20
         
         return cell
     }
@@ -44,9 +58,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            alarmList.remove(at: indexPath.row)
+            alarmList.remove(at: indexPath.section)
             saveAlarms()
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            let indexSet = IndexSet(arrayLiteral: indexPath.section)
+            
+            tableView.deleteSections(indexSet, with: UITableView.RowAnimation.fade)
         }
     }
     
