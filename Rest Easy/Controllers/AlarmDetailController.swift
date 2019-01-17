@@ -24,8 +24,13 @@ class AlarmDetailController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     @IBAction func onButtonClick(_ sender: Any) {
         let alarmTime = alarmTimePicker.date
+        let currentDayOfWeek = Date()
+        let numberDayOfWeek = Calendar.current.dateComponents([.weekday], from: currentDayOfWeek).weekday
+        var daysForAlarmArmed = [false, false, false, false, false, false, false]
         
-        let newAlarmModel: AlarmModel = AlarmModel(timeForAlarmToSound: alarmTime, alarmStyle: chosenStyle, alarmStrength: chosenIntensity, armed: true)
+        daysForAlarmArmed[numberDayOfWeek!] = true
+        
+        let newAlarmModel: AlarmModel = AlarmModel(timeForAlarmToSound: alarmTime, alarmStyle: chosenStyle, alarmStrength: chosenIntensity, armed: true, daysForAlarmToSound: daysForAlarmArmed)
         
         newAlarm = newAlarmModel
     }

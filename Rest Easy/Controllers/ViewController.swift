@@ -27,8 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cellSpacingHeight
     }
     
-    func tableView(_ tableView: UITableView,
-                   viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let customView = UIView()
         customView.backgroundColor = UIColor.clear
         return customView
@@ -41,6 +40,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dateformatter = DateFormatter()
         
         let alarm = alarmList[indexPath.row]
+        
+        cell.setReferenceAlarm(alarmModel: alarm)
+        cell.setDayOfTheWeekButtons()
+        cell.setAlarmArmedButton()
+        cell.delegate = self
         
         dateformatter.timeStyle = DateFormatter.Style.short
         
@@ -85,5 +89,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         self.alarmTableView.reloadData()
+    }
+}
+
+extension ViewController: AlarmTableCellDelegate {
+    func didTapAlarmArmed(thisAlarmModel: AlarmModel, setOn: Bool) {
+//        for i in 0...alarmList.count - 1 {
+//            if (alarmList[i].isEqual(thisAlarmModel)) {
+//                alarmList[i].Armed = setOn
+//            }
+//        }
     }
 }

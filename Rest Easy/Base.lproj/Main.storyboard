@@ -110,6 +110,9 @@
                                                 </stackView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kD-o2-1yL">
                                                     <rect key="frame" x="300" y="50" width="51" height="30"/>
+                                                    <connections>
+                                                        <action selector="alarmArmedClicked:" destination="rgG-f7-HQ6" eventType="valueChanged" id="RjJ-to-eu2"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>

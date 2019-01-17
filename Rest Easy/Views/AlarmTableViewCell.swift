@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AlarmTableCellDelegate {
+    func didTapAlarmArmed(thisAlarmModel: AlarmModel, setOn: Bool)
+}
+
 class AlarmTableViewCell: UITableViewCell {
 
     @IBOutlet weak var AlarmTimeLabel: UILabel!
@@ -21,16 +25,15 @@ class AlarmTableViewCell: UITableViewCell {
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var saturdayButton: UIButton!
     
-    @IBOutlet weak var BackgroundCardView: UIView!
+    var delegate: AlarmTableCellDelegate?
     
-    var referencedAlarmModel: AlarmModel?
+    var referencedAlarmModel: AlarmModel!
     
     @IBAction func alarmDayClicked(_ sender: UIButton) {
         let selected = !sender.isSelected
         
         if selected
         {
-            // Edit the referenced model
             print("selected")
         }
         else
@@ -41,18 +44,41 @@ class AlarmTableViewCell: UITableViewCell {
         sender.isSelected = selected
     }
     
-    func updateUI() {
+    @IBAction func alarmArmedClicked(_ sender: UISwitch) {
+        let selected = sender.isOn
         
+        if selected
+        {
+            delegate?.didTapAlarmArmed(thisAlarmModel: referencedAlarmModel, setOn: true)
+        }
+        else
+        {
+            delegate?.didTapAlarmArmed(thisAlarmModel: referencedAlarmModel, setOn: false)
+        }
+    }
+    
+    func setReferenceAlarm(alarmModel: AlarmModel) {
+        referencedAlarmModel = alarmModel
+    }
+    
+    func setDayOfTheWeekButtons() {
+        let dayOfTheWeekButtonArray = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton]
+        for i in 0...6 {
+            if (referencedAlarmModel?.DaysForAlarmToSound[i] == true) {
+                dayOfTheWeekButtonArray[i]!.sendActions(for: .touchUpInside)
+            }
+        }
+    }
+    
+    func setAlarmArmedButton() {
+        AlarmArmedSwitch.setOn(referencedAlarmModel.Armed, animated: false)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        updateUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }

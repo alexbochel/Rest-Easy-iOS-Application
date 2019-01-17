@@ -13,7 +13,7 @@ class AlarmModel: NSObject, NSCoding {
     var TimeForAlarmToSound: Date!
     var AlarmStyle: String!
     var AlarmStrength: String!
-    var DaysForAlarmToSound: Array<String>!
+    var DaysForAlarmToSound: Array<Bool>!
     var Armed: Bool!
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -29,12 +29,13 @@ class AlarmModel: NSObject, NSCoding {
         static let armedKey = "armedKey"
     }
     
-    init(timeForAlarmToSound: Date, alarmStyle: String, alarmStrength: String, armed: Bool)
+    init(timeForAlarmToSound: Date, alarmStyle: String, alarmStrength: String, armed: Bool, daysForAlarmToSound: Array<Bool>)
     {
         TimeForAlarmToSound = timeForAlarmToSound
         AlarmStyle = alarmStyle
         AlarmStrength = alarmStrength
         Armed = armed
+        DaysForAlarmToSound = daysForAlarmToSound
     }
     
     func encode(with aCoder: NSCoder) {
@@ -50,7 +51,25 @@ class AlarmModel: NSObject, NSCoding {
         let AlarmStyle = aDecoder.decodeObject(forKey: "alarmStyleKey") as! String
         let AlarmStrength = aDecoder.decodeObject(forKey: "alarmStrengthKey") as! String
         let Armed = aDecoder.decodeObject(forKey: "armedKey") as? Bool
+        let DaysForAlarmToSound = aDecoder.decodeObject(forKey: "daysForAlarmToSoundKey") as! Array<Bool>
         
-        self.init(timeForAlarmToSound: TimeForAlarmToSound, alarmStyle: AlarmStyle, alarmStrength: AlarmStrength, armed: Armed ?? false) // TODO: Delete default
+        self.init(timeForAlarmToSound: TimeForAlarmToSound, alarmStyle: AlarmStyle, alarmStrength: AlarmStrength, armed: Armed ?? false, daysForAlarmToSound: DaysForAlarmToSound) // TODO: Delete default
+    }
+    
+    func isEqual(object: AnyObject?) -> Bool {
+        let object = object as? AlarmModel
+        
+        if (object?.TimeForAlarmToSound != TimeForAlarmToSound) {
+            return false
+        }
+        else if (object?.AlarmStyle != AlarmStyle) {
+            return false
+        }
+        else if (object?.AlarmStrength != AlarmStrength) {
+            return false
+        }
+        else {
+            return true
+        }
     }
 }
