@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let dateformatter = DateFormatter()
         
-        let alarm = alarmList[indexPath.row]
+        let alarm = alarmList[indexPath.section]
         
         cell.setReferenceAlarm(alarmModel: alarm)
         cell.setDayOfTheWeekButtons()
@@ -61,7 +61,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
             alarmList.remove(at: indexPath.section)
             saveAlarms()
             
@@ -93,11 +92,48 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 }
 
 extension ViewController: AlarmTableCellDelegate {
-    func didTapAlarmArmed(thisAlarmModel: AlarmModel, setOn: Bool) {
-//        for i in 0...alarmList.count - 1 {
-//            if (alarmList[i].isEqual(thisAlarmModel)) {
-//                alarmList[i].Armed = setOn
-//            }
-//        }
+    func didTapDayForAlarmToSound(thisAlarmModel: NSUUID, setOn: Bool, dayOfTheWeek: String) {
+        for i in 0...alarmList.count - 1 {
+            if (alarmList[i].UniqueId == thisAlarmModel) {
+                if dayOfTheWeek == "Su"
+                {
+                    alarmList[i].DaysForAlarmToSound[0] = setOn
+                }
+                if dayOfTheWeek == "Mo"
+                {
+                    alarmList[i].DaysForAlarmToSound[1] = setOn
+                }
+                if dayOfTheWeek == "Tu"
+                {
+                    alarmList[i].DaysForAlarmToSound[2] = setOn
+                }
+                if dayOfTheWeek == "We"
+                {
+                    alarmList[i].DaysForAlarmToSound[3] = setOn
+                }
+                if dayOfTheWeek == "Th"
+                {
+                    alarmList[i].DaysForAlarmToSound[4] = setOn
+                }
+                if dayOfTheWeek == "Fr"
+                {
+                    alarmList[i].DaysForAlarmToSound[5] = setOn
+                }
+                else if dayOfTheWeek == "Sa"
+                {
+                    alarmList[i].DaysForAlarmToSound[6] = setOn
+                }
+                saveAlarms()
+            }
+        }
+    }
+    
+    func didTapAlarmArmed(thisAlarmModel: NSUUID, setOn: Bool) {
+        for i in 0...alarmList.count - 1 {
+            if (alarmList[i].UniqueId == thisAlarmModel) {
+                alarmList[i].Armed = setOn
+                saveAlarms()
+            }
+        }
     }
 }

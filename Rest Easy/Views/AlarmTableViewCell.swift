@@ -9,7 +9,8 @@
 import UIKit
 
 protocol AlarmTableCellDelegate {
-    func didTapAlarmArmed(thisAlarmModel: AlarmModel, setOn: Bool)
+    func didTapAlarmArmed(thisAlarmModel: NSUUID, setOn: Bool)
+    func didTapDayForAlarmToSound(thisAlarmModel: NSUUID, setOn: Bool, dayOfTheWeek: String)
 }
 
 class AlarmTableViewCell: UITableViewCell {
@@ -31,15 +32,9 @@ class AlarmTableViewCell: UITableViewCell {
     
     @IBAction func alarmDayClicked(_ sender: UIButton) {
         let selected = !sender.isSelected
+        let day = sender.currentTitle!
         
-        if selected
-        {
-            print("selected")
-        }
-        else
-        {
-            print("deselected")
-        }
+        delegate?.didTapDayForAlarmToSound(thisAlarmModel: referencedAlarmModel.UniqueId, setOn: selected, dayOfTheWeek: day)
         
         sender.isSelected = selected
     }
@@ -47,13 +42,13 @@ class AlarmTableViewCell: UITableViewCell {
     @IBAction func alarmArmedClicked(_ sender: UISwitch) {
         let selected = sender.isOn
         
-        if selected
+        if selected // Simplify ya dummy
         {
-            delegate?.didTapAlarmArmed(thisAlarmModel: referencedAlarmModel, setOn: true)
+            delegate?.didTapAlarmArmed(thisAlarmModel: referencedAlarmModel.UniqueId, setOn: true)
         }
         else
         {
-            delegate?.didTapAlarmArmed(thisAlarmModel: referencedAlarmModel, setOn: false)
+            delegate?.didTapAlarmArmed(thisAlarmModel: referencedAlarmModel.UniqueId, setOn: false)
         }
     }
     

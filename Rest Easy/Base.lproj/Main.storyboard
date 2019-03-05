@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circleBackgroundNoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8iZ-Ah-bUG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uT0-me-7Sc" userLabel="AlarmTableView">
                                 <rect key="frame" x="16" y="79.666666666666686" width="382" height="640.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,12 +173,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.2646293869415477" green="0.77317909527049145" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="8iZ-Ah-bUG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="319-y1-nZS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uT0-me-7Sc" secondAttribute="trailing" constant="16" id="5aK-IU-dGv"/>
                             <constraint firstItem="uT0-me-7Sc" firstAttribute="top" secondItem="aN7-SV-PNn" secondAttribute="bottom" constant="20" id="84H-IR-QVJ"/>
                             <constraint firstItem="uT0-me-7Sc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8yz-eA-qKC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WgB-RG-SLw" secondAttribute="trailing" constant="16" id="EdP-x5-EFI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uT0-me-7Sc" secondAttribute="bottom" constant="16" id="KPB-nt-aaE"/>
+                            <constraint firstItem="8iZ-Ah-bUG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PzW-ut-vHd"/>
                             <constraint firstItem="WgB-RG-SLw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="Ru5-pp-biA"/>
+                            <constraint firstItem="8iZ-Ah-bUG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Val-qg-rgb"/>
+                            <constraint firstItem="8iZ-Ah-bUG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d6Q-9w-P4K"/>
                             <constraint firstItem="aN7-SV-PNn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11.5" id="jzU-AU-Sj2"/>
                             <constraint firstItem="aN7-SV-PNn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nsJ-iC-ERb"/>
                             <constraint firstItem="uT0-me-7Sc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xBf-I6-mKS"/>
@@ -291,6 +298,9 @@
             <point key="canvasLocation" x="992.75362318840587" y="133.25892857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circleBackgroundNoLogo" width="1440" height="2560"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c9z-mb-yCt"/>
     </inferredMetricsTieBreakers>

@@ -15,6 +15,7 @@ class AlarmModel: NSObject, NSCoding {
     var AlarmStrength: String!
     var DaysForAlarmToSound: Array<Bool>!
     var Armed: Bool!
+    var UniqueId: NSUUID!
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     
@@ -36,6 +37,7 @@ class AlarmModel: NSObject, NSCoding {
         AlarmStrength = alarmStrength
         Armed = armed
         DaysForAlarmToSound = daysForAlarmToSound
+        UniqueId = NSUUID()
     }
     
     func encode(with aCoder: NSCoder) {
@@ -54,22 +56,5 @@ class AlarmModel: NSObject, NSCoding {
         let DaysForAlarmToSound = aDecoder.decodeObject(forKey: "daysForAlarmToSoundKey") as! Array<Bool>
         
         self.init(timeForAlarmToSound: TimeForAlarmToSound, alarmStyle: AlarmStyle, alarmStrength: AlarmStrength, armed: Armed ?? false, daysForAlarmToSound: DaysForAlarmToSound) // TODO: Delete default
-    }
-    
-    func isEqual(object: AnyObject?) -> Bool {
-        let object = object as? AlarmModel
-        
-        if (object?.TimeForAlarmToSound != TimeForAlarmToSound) {
-            return false
-        }
-        else if (object?.AlarmStyle != AlarmStyle) {
-            return false
-        }
-        else if (object?.AlarmStrength != AlarmStrength) {
-            return false
-        }
-        else {
-            return true
-        }
     }
 }

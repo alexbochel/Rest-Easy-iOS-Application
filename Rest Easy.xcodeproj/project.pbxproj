@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3660F821F1050E00F8F6A4 /* Haptico.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3660F721F1050E00F8F6A4 /* Haptico.framework */; };
 		2B4E857C21B9E1A500FC437D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E857B21B9E1A500FC437D /* AppDelegate.swift */; };
 		2B4E857E21B9E1A500FC437D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E857D21B9E1A500FC437D /* ViewController.swift */; };
 		2B4E858121B9E1A500FC437D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4E857F21B9E1A500FC437D /* Main.storyboard */; };
@@ -18,7 +19,6 @@
 		2BEF16FA21C7FEF9004C4896 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF16F921C7FEF9004C4896 /* AlarmModel.swift */; };
 		2BEF16FE21C80DF9004C4896 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF16FD21C80DF9004C4896 /* AlarmTableViewCell.swift */; };
 		2BF804F521C5BE8F00995D06 /* AlarmDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF804F421C5BE8F00995D06 /* AlarmDetailController.swift */; };
-		69869F0196E67D184CE02784 /* Pods_Rest_Easy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199A6BF54A97139EB46B9234 /* Pods_Rest_Easy.framework */; };
 		8080E2CB38281E2821EE943B /* Pods_Rest_EasyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CC512A88753E96C1F37785 /* Pods_Rest_EasyUITests.framework */; };
 		9D0AD10C9FB8AB8163D7F5B1 /* Pods_Rest_EasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A7B6B957A19FF7F2AD297F /* Pods_Rest_EasyTests.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0466711A1F1C9892CF548357 /* Pods-Rest EasyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rest EasyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rest EasyUITests/Pods-Rest EasyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		199A6BF54A97139EB46B9234 /* Pods_Rest_Easy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rest_Easy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B3660F721F1050E00F8F6A4 /* Haptico.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Haptico.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4E857821B9E1A500FC437D /* Rest Easy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rest Easy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4E857B21B9E1A500FC437D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B4E857D21B9E1A500FC437D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69869F0196E67D184CE02784 /* Pods_Rest_Easy.framework in Frameworks */,
+				2B3660F821F1050E00F8F6A4 /* Haptico.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +195,7 @@
 		F0D6382120D47FBF7E3DAE4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B3660F721F1050E00F8F6A4 /* Haptico.framework */,
 				199A6BF54A97139EB46B9234 /* Pods_Rest_Easy.framework */,
 				96A7B6B957A19FF7F2AD297F /* Pods_Rest_EasyTests.framework */,
 				64CC512A88753E96C1F37785 /* Pods_Rest_EasyUITests.framework */,
