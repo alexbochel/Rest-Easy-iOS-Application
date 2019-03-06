@@ -154,9 +154,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgB-RG-SLw">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgB-RG-SLw">
                                 <rect key="frame" x="338" y="56" width="60" height="59"/>
-                                <color key="backgroundColor" red="0.048410050869999999" green="0.57971744089999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
@@ -166,6 +166,7 @@
                                     <constraint firstAttribute="width" constant="60" id="FHE-UK-35o"/>
                                     <constraint firstAttribute="height" constant="59" id="Xfr-EL-fJh"/>
                                 </constraints>
+                                <state key="normal" image="newAlarmIcon"/>
                                 <connections>
                                     <segue destination="FHR-Jh-hCT" kind="show" id="Pp1-nG-zzz"/>
                                 </connections>
@@ -185,6 +186,7 @@
                             <constraint firstItem="8iZ-Ah-bUG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d6Q-9w-P4K"/>
                             <constraint firstItem="aN7-SV-PNn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11.5" id="jzU-AU-Sj2"/>
                             <constraint firstItem="aN7-SV-PNn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nsJ-iC-ERb"/>
+                            <constraint firstItem="WgB-RG-SLw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uP5-id-G8U"/>
                             <constraint firstItem="uT0-me-7Sc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xBf-I6-mKS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -267,7 +269,7 @@
                                 </connections>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1868198458751307" green="0.69796200466132396" blue="0.91984230279922485" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.064572118401825737" green="0.35315181275945301" blue="0.80068210659898476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pAw-yP-1rm" firstAttribute="leading" secondItem="GRc-fs-jCY" secondAttribute="leading" constant="16" id="4z1-iR-aTQ"/>
                             <constraint firstItem="XDJ-Yv-f3T" firstAttribute="top" secondItem="GRc-fs-jCY" secondAttribute="top" constant="11.5" id="9DA-o4-kjH"/>
@@ -300,6 +302,7 @@
     </scenes>
     <resources>
         <image name="circleBackgroundNoLogo" width="1440" height="2560"/>
+        <image name="newAlarmIcon" width="800" height="800"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c9z-mb-yCt"/>
