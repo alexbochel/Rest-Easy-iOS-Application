@@ -155,16 +155,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgB-RG-SLw">
-                                <rect key="frame" x="338" y="56" width="60" height="59"/>
+                                <rect key="frame" x="174.66666666666666" y="621" width="65" height="65"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="WgB-RG-SLw" secondAttribute="height" multiplier="60:59" id="3Bq-9F-Aos"/>
-                                    <constraint firstAttribute="width" constant="60" id="FHE-UK-35o"/>
-                                    <constraint firstAttribute="height" constant="59" id="Xfr-EL-fJh"/>
+                                    <constraint firstAttribute="height" constant="65" id="bae-2P-trH"/>
+                                    <constraint firstAttribute="width" constant="65" id="jkY-Bz-epo"/>
                                 </constraints>
                                 <state key="normal" image="newAlarmIcon"/>
                                 <connections>
@@ -178,16 +177,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uT0-me-7Sc" secondAttribute="trailing" constant="16" id="5aK-IU-dGv"/>
                             <constraint firstItem="uT0-me-7Sc" firstAttribute="top" secondItem="aN7-SV-PNn" secondAttribute="bottom" constant="20" id="84H-IR-QVJ"/>
                             <constraint firstItem="uT0-me-7Sc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8yz-eA-qKC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WgB-RG-SLw" secondAttribute="trailing" constant="16" id="EdP-x5-EFI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uT0-me-7Sc" secondAttribute="bottom" constant="16" id="KPB-nt-aaE"/>
                             <constraint firstItem="8iZ-Ah-bUG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PzW-ut-vHd"/>
-                            <constraint firstItem="WgB-RG-SLw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="Ru5-pp-biA"/>
                             <constraint firstItem="8iZ-Ah-bUG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Val-qg-rgb"/>
                             <constraint firstItem="8iZ-Ah-bUG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d6Q-9w-P4K"/>
+                            <constraint firstItem="WgB-RG-SLw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ipH-jq-Nv0"/>
                             <constraint firstItem="aN7-SV-PNn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11.5" id="jzU-AU-Sj2"/>
                             <constraint firstItem="aN7-SV-PNn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nsJ-iC-ERb"/>
-                            <constraint firstItem="WgB-RG-SLw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uP5-id-G8U"/>
                             <constraint firstItem="uT0-me-7Sc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xBf-I6-mKS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WgB-RG-SLw" secondAttribute="bottom" constant="50" id="xCh-or-bJW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
